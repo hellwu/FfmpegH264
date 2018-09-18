@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
     public native int init();
     static {
+        System.loadLibrary("x264");
         System.loadLibrary("avcodec");
         System.loadLibrary("avfilter");
         System.loadLibrary("avformat");
         System.loadLibrary("avutil");
         System.loadLibrary("swresample");
         System.loadLibrary("swscale");
-        System.loadLibrary("x264");
 
         System.loadLibrary("video_play");
     }

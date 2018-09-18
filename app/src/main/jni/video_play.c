@@ -1,4 +1,4 @@
-#include "com_hellw_ffmpegh264_MainActivity.h"
+#include "com_hellw_ffmpegh264_H264Encoder.h"
 #include <libavcodec/avcodec.h>
 #include <libswscale/swscale.h>
 
@@ -14,8 +14,8 @@ uint8_t *m_PicBuf;
 
  JNIEXPORT int JNICALL Java_com_hellw_ffmpegh264_MainActivity_init
    (JNIEnv * env, jobject jobj) {
- av_init_packet(&m_avpkt);
-
+    av_init_packet(&m_avpkt);
+    avcodec_register_all();
     m_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
     if(!m_codec){
         LOGI("Codec not found\n");
@@ -51,4 +51,6 @@ uint8_t *m_PicBuf;
     m_PicBytes = 0;
     m_PicBuf = NULL;
     m_pImgCtx = NULL;
+
+     return 1;
 }

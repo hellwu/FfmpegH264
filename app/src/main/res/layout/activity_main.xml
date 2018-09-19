@@ -6,9 +6,15 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical">
+
+	<SurfaceView
+		android:id="@+id/sv"
+		android:layout_width="match_parent"
+		android:layout_height="420dp"/>
+
 	<Button
 		android:id="@+id/bt_init"
 		android:layout_width="100dp"
 		android:layout_height="50dp"
-		android:text="Init"/>
+		android:text="推流"/>
 </LinearLayout>

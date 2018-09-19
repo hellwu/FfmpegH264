@@ -7,6 +7,18 @@ package com.hellw.ffmpegh264;
 
 public class H264Encoder {
 
+    static {
+        System.loadLibrary("x264");
+        System.loadLibrary("avcodec");
+        System.loadLibrary("avfilter");
+        System.loadLibrary("avformat");
+        System.loadLibrary("avutil");
+        System.loadLibrary("swresample");
+        System.loadLibrary("swscale");
+
+        System.loadLibrary("video_play");
+    }
+
     /**
      * 初始化H264编码
      * @param destUrl 推流url
